@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JPA User Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+        <style>
+            td {
+                padding: 10px;
+            }
+        </style>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    alert('回應訊息:' + this.responseText);
+                }
+            };
+            
+            function updateUser() {
+                var user_id   = document.getElementById("update_user_id").value;
+                var user_name = document.getElementById("user_name").value;
+                var user_age  = document.getElementById("user_age").value;
+                var path = "../jpa/user/" + user_id;
+                xhttp.open("PUT", path, true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                var args = "user_name=" + user_name + "&user_age=" + user_age;
+                xhttp.send(args);
+            }
+            
+            function deleteUser() {
+                var user_id   = document.getElementById("delete_user_id").value;
+                var path = "../jpa/user/" + user_id;
+                xhttp.open("DELETE", path, true);
+                xhttp.send();
+            }
+
+        </script>
+    </head>
+    <body style="padding: 15px">
+        <table border="1" width="100%">
+            <tr>
+                <td valign="top">
+                    <!--1. User Form (POST - Insert) -->
+                    <form class="pure-form" method="post" action="../jpa/user">
+                        <fieldset>
+                            <legend>1. User Form (POST - Insert)</legend>
+                            <input type="text" placeholder="請輸入人名" value="John" name="user_name"><p/>
+                            <input type="number" placeholder="請輸入年齡" value="20" name="user_age"><p/>
+                            <button type="submit" class="pure-button pure-button-primary">提交</button>
+                        </fieldset>
+                    </form>
+                </td>
+                <td valign="top">
+                    <!--2. User Form (GET - Query) -->
+                    <form class="pure-form" method="get" action="../jpa/users">
+                        <fieldset>
+                            <legend>2.1 User Form (GET - Query)</legend>
+                            <button type="submit" class="pure-button pure-button-primary">全部查詢</button>
+                        </fieldset>
+                    </form>
+                    <form class="pure-form" method="get" action="../jpa/user/1">
+                        <fieldset>
+                            <legend>2.2 User Form (GET - Get)</legend>
+                            <button type="submit" class="pure-button pure-button-primary">單筆查詢</button>
+                        </fieldset>
+                    </form>
+                </td>
+
+                <td valign="top">
+                    <!--3. User Form (PUT - Update) -->
+                    <form class="pure-form">
+                        <fieldset>
+                            <legend>3. User Form (PUT - Update)</legend>
+                            <input type="number" placeholder="請輸入序號" value="1"  id="update_user_id"><p/>
+                            <input type="text" placeholder="請輸入人名" value="John" id="user_name"><p/>
+                            <input type="number" placeholder="請輸入年齡" value="20" id="user_age"><p/>
+                            <button type="button" class="pure-button pure-button-primary" onclick="updateUser()">提交</button>
+                        </fieldset>
+                    </form>
+                </td>
+                <td valign="top">
+                    <!--4. User Form (POST - Delete) -->
+                    <form class="pure-form">
+                        <fieldset>
+                            <legend>4. User Form (Delete - Delete)</legend>
+                            <input type="number" placeholder="請輸入序號" value="1" id="delete_user_id"><p/>
+                            <button type="button" class="pure-button pure-button-primary" onclick="deleteUser()">提交</button>
+                        </fieldset>
+                    </form>
+                </td>
+            </tr>
+
+        </table>
+    </body>
+</html>

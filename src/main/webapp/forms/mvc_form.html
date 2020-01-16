@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MVC Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+    </head>
+    <body style="padding: 15px">
+        <form class="pure-form" method="get" action="../mvc/controller/user">
+            <fieldset>
+                <legend>1. User Form (MVC Basic)</legend>
+                <input type="text" placeholder="請輸入人名" name="username" value="John"><p/>
+                <button type="submit" class="pure-button pure-button-primary">提交</button>
+            </fieldset>
+        </form>
+        <form class="pure-form" method="get" action="../mvc/controller/exchange" target="exchange_result">
+            <fieldset>
+                <legend>2. Exchange Form (MVC Basic)</legend>
+                <input type="number" placeholder="請輸入台幣" name="money" value="100"><p/>
+                <select name="symbol">
+                    <option value="TWDUSD=x" selected>美金</option>
+                    <option value="TWDJPY=x">日幣</option>
+                </select>
+                <button type="submit" class="pure-button pure-button-primary">換匯</button>
+                <iframe width="150" height="40" name="exchange_result" frameborder="0"></iframe>
+            </fieldset>
+        </form>
+        <form class="pure-form" method="get" action="../mvc/controller/product">
+            <fieldset>
+                <legend>3. Product Query All (JNDI)</legend>
+                <button type="submit" class="pure-button pure-button-primary">全部查詢</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

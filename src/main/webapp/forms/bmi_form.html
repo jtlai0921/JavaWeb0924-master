@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BMI Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+    </head>
+    <body style="padding: 15px">
+        <form class="pure-form" method="post" action="/JavaWeb0924/servlet/bmi" target="result">
+            <fieldset>
+                <legend>BMI Form</legend>
+                <input type="number" placeholder="請輸入身高" name="h"><p/>
+                <input type="number" placeholder="請輸入體重" name="w"><p/>
+                <button type="submit" class="pure-button pure-button-primary">計算</button>
+            </fieldset>
+        </form>
+        <iframe name="result" width="500" height="50" frameborder="0"></iframe>
+    </body>
+</html>

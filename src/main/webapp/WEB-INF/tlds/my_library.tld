@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>my_library</short-name>
+    <uri>/WEB-INF/tlds/my_library</uri>
+    <tag>
+        <name>add</name>
+        <tag-class>com.mycompany.web.ctag.Add</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>x</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>y</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>bmi</name>
+        <tag-class>com.mycompany.web.ctag.BMI</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>h</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>w</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>loop</name>
+        <tag-class>com.mycompany.web.ctag.Loop</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>count</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>search</name>
+        <tag-class>com.mycompany.web.ctag.Search</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>marker</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>simple</name>
+        <tag-class>com.mycompany.web.ctag.Simple</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+    
+    <tag>
+        <name>simple_search_image</name>
+        <tag-class>com.mycompany.web.ctag.SimpleSearchImage</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>keyword</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>simple_dyn_add</name>
+        <tag-class>com.mycompany.web.ctag.SimpleDynAdd</tag-class>
+        <body-content>empty</body-content>
+        <dynamic-attributes>true</dynamic-attributes>
+    </tag>
+    
+</taglib>
